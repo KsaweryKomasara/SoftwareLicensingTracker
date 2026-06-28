@@ -1,1 +1,2 @@
-#Software Licensing Manager
+# Software Licensing Manager
+by Ksawery
