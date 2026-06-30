@@ -1,10 +1,9 @@
-﻿using System.Linq.Expressions;
+﻿namespace EngineeringSoftwareLicensingTracker.Services.Worker
 
-namespace EngineeringSoftwareLicensingTracker.Services
+// Licencje sieciowe
 {
-    public class ReservationProcess
+    public class FloatingLicenseService : LicenseService
     {
-
         public Boolean Check(int noOfActiveReservation, int limit)
         {
 
@@ -18,7 +17,6 @@ namespace EngineeringSoftwareLicensingTracker.Services
                 return true;
             }
             return false;
+        }
     }
-
-}
 }

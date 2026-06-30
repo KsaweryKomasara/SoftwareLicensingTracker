@@ -1,13 +1,13 @@
-﻿namespace EngineeringSoftwareLicensingTracker.Services
+﻿namespace EngineeringSoftwareLicensingTracker.Services.Worker
 {
-    public class LicenseTimer
+    public class LicenseService
     {
         public int ReturnTimeToExpire(DateTime actualDate, DateTime expirationDate)
         {
             return (expirationDate - actualDate).Days;
         }
 
-        public Boolean Expired(int days)
+        public Boolean HasExpired(int days)
         {
 
             if (days > 3650)
@@ -20,6 +20,7 @@
                 return true;
             }
             else return false;
+        }
+
     }
-}
 }
