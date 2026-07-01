@@ -1,11 +1,27 @@
 {
   "version": 2,
-  "dgSpecHash": "fLi9i/BjsuM=",
+  "dgSpecHash": "WXFQLGM8qgY=",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.9\\microsoft.aspnetcore.openapi.10.0.9.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.9\\microsoft.entityframeworkcore.10.0.9.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.9\\microsoft.entityframeworkcore.abstractions.10.0.9.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.9\\microsoft.entityframeworkcore.analyzers.10.0.9.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Pakiet „Microsoft.OpenApi” 2.0.0 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj",
+      "libraryId": "Microsoft.OpenApi",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }
