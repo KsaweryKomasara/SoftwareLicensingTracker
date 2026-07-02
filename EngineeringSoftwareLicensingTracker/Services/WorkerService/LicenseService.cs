@@ -1,10 +1,13 @@
-﻿using EngineeringSoftwareLicensingTracker.Entities;
+﻿using EngineeringSoftwareLicensingTracker.DataBase;
+using EngineeringSoftwareLicensingTracker.Entities;
+using EngineeringSoftwareLicensingTracker.Entities.Activities;
 using Microsoft.AspNetCore.Mvc;
-namespace EngineeringSoftwareLicensingTracker.Services.Worker
+namespace EngineeringSoftwareLicensingTracker.Services.WorkerService
 {
 
     public abstract class LicenseService
     {
+        public AppDbContext AppDbContext { get; set; }
         public int ReturnTimeToExpire(DateTime actualDate, DateTime expirationDate)
         {
             return (expirationDate - actualDate).Days;
@@ -25,20 +28,28 @@ namespace EngineeringSoftwareLicensingTracker.Services.Worker
             else return false;
         }
 
-        public async Task<bool> ReleaseLicense(License license)
+        public async Task<Activity> ReleaseLicense(License license, Entities.Worker worker)
         {
+            Activity activity = new Activity();
+
+            activity.ActivityName = "License Release";
+            activity.WorkerID = worker.WorkerID;
 
             if (license.SlotsOccupied < 0 || license.TotalSlots < 0)
             {
-                return false;
+                activity.ActvityStatusID = ActivityStatus.ActivityID.NOAVAIBLESLOTS;
+                return activity;
             }
 
             if (license.SlotsOccupied > 0)
             {
                 license.SlotsOccupied -= 1;
+                activity.ActvityStatusID = ActivityStatus.ActivityID.SUCCES;
+                return activity;
             }
 
-            return true;
+            activity.ActvityStatusID = ActivityStatus.ActivityID.OTHER;
+            return activity;
         }
 
         public async Task<bool> CheckToRelease(License license) // When the user opens the app
