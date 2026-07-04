@@ -1,9 +1,12 @@
-﻿namespace EngineeringSoftwareLicensingTracker.Services.Worker
+﻿using EngineeringSoftwareLicensingTracker.DataBase;
+namespace EngineeringSoftwareLicensingTracker.Services.WorkerService
 {
 
     // Licencje stanowiskowe
     public class NodeLockLicenseServices : LicenseService
     {
+
+        public NodeLockLicenseServices(AppDbContext appDbContext) : base(appDbContext) { }
 
         public Boolean VerifyWorkplace(String assignedMAC, String workplaceMAC)
         {

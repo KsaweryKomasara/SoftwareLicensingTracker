@@ -1,6 +1,6 @@
 ﻿namespace EngineeringSoftwareLicensingTracker.Entities.Programs
 {
-    public class FloatingLicense : License
+    public class FloatingLicense : LicenseEntity
     {
 
         public String ServerIP { get; set; }

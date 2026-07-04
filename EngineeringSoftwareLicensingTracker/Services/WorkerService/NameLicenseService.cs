@@ -1,9 +1,12 @@
-﻿namespace EngineeringSoftwareLicensingTracker.Services.Worker
+﻿using EngineeringSoftwareLicensingTracker.DataBase;
+namespace EngineeringSoftwareLicensingTracker.Services.WorkerService
 
     // Licencje imienne przypisane do jednego pracownika
 {
     public class NameLicenseService : LicenseService
     {
+
+        public NameLicenseService(AppDbContext appDbContext) : base(appDbContext) { }
 
         public Boolean WorkerIDCheck(int assignedID, int workerID)
         {

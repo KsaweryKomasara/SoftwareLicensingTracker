@@ -1,8 +1,8 @@
 ﻿namespace EngineeringSoftwareLicensingTracker.Entities
 {
-    public class Reservation
+    public class ReservationEntity
     {
-        public int ReservationID { get; set; }
+        public int Id { get; set; }
         public String ReservationName { get; set; }
         public String ReservationDate { get; set; }
         public String ReleaseDate { get; set; }

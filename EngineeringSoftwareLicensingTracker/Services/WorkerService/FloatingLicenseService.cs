@@ -1,9 +1,12 @@
-﻿namespace EngineeringSoftwareLicensingTracker.Services.Worker
+﻿using EngineeringSoftwareLicensingTracker.DataBase;
+namespace EngineeringSoftwareLicensingTracker.Services.WorkerService
 
 // Licencje sieciowe
 {
     public class FloatingLicenseService : LicenseService
     {
+
+        public FloatingLicenseService(AppDbContext appDbContext) : base(appDbContext) { }
         public Boolean Check(int noOfActiveReservation, int limit)
         {
 

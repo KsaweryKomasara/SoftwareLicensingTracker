@@ -1,7 +1,8 @@
 ﻿namespace EngineeringSoftwareLicensingTracker.Entities
 {
-    public class License
+    public class LicenseEntity
     {
+        public int Id { get; set; }
         public String Name { get; set; }
         public String PurchaseDate { get; set; }
         public decimal Price { get; set; }

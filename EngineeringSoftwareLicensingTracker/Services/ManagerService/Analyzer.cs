@@ -14,13 +14,13 @@ namespace EngineeringSoftwareLicensingTracker.Services.ManagerService
 
         public async Task<decimal> GetFinancialReport()
         {
-            return await AppDbContext.Licenses.SumAsync(x => x.Price);
+            return await AppDbContext.LicenseEntity.SumAsync(x => x.Price);
         }
 
-        public async Task<List<Entities.License>> GetLicensesNotUsed()
+        public async Task<List<Entities.LicenseEntity>> GetLicensesNotUsed()
         {
             DateTime border = DateTime.Now.AddDays(-30);
-            return await AppDbContext.Licenses.Where(x => x.LastUsedDate < border).ToListAsync();
+            return await AppDbContext.LicenseEntity.Where(x => x.LastUsedDate < border).ToListAsync();
         }
     }
 }

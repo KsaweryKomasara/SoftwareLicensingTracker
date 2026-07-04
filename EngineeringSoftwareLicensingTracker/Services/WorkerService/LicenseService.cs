@@ -2,82 +2,89 @@
 using EngineeringSoftwareLicensingTracker.Entities;
 using EngineeringSoftwareLicensingTracker.Entities.Activities;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel;
 namespace EngineeringSoftwareLicensingTracker.Services.WorkerService
 {
 
     public abstract class LicenseService
     {
         public AppDbContext AppDbContext { get; set; }
-        public int ReturnTimeToExpire(DateTime actualDate, DateTime expirationDate)
-        {
-            return (expirationDate - actualDate).Days;
+
+        public LicenseService(AppDbContext AppDbContext) 
+        { 
+            this.AppDbContext = AppDbContext;
         }
 
-        public Boolean HasExpired(int days)
+        private ActivityStatus ValidateReservation(LicenseEntity license)
         {
-
-            if (days > 3650)
+            if (license.TotalSlots < 0)
             {
-                throw new ArgumentException("License lasts too long");
+                throw new ArgumentException("Incorret total slots number");
             }
 
-            if (days < 0)
+            if (license.TotalSlots - license.SlotsOccupied < 1)
             {
-                return true;
+                return ActivityStatus.NOAVAIBLESLOTS;
             }
-            else return false;
+
+            if (license.TotalSlots - license.SlotsOccupied > 1)
+            {
+                return ActivityStatus.SUCCES;
+            }
+
+            return ActivityStatus.OTHER;
         }
 
-        public async Task<Activity> ReleaseLicense(License license, Entities.Worker worker)
+        private ActivityStatus ValidateReleasation(LicenseEntity license)
         {
-            Activity activity = new Activity();
 
-            activity.ActivityName = "License Release";
-            activity.WorkerID = worker.WorkerID;
-
-            if (license.SlotsOccupied < 0 || license.TotalSlots < 0)
+            if (license.TotalSlots < 0)
             {
-                activity.ActvityStatusID = ActivityStatus.ActivityID.NOAVAIBLESLOTS;
-                return activity;
+                throw new ArgumentException("Incorrect total slots number.");
+            }
+
+            if (license.SlotsOccupied <= 0)
+            {
+                return ActivityStatus.NOAVAIBLESLOTS;
             }
 
             if (license.SlotsOccupied > 0)
             {
                 license.SlotsOccupied -= 1;
-                activity.ActvityStatusID = ActivityStatus.ActivityID.SUCCES;
-                return activity;
+                return ActivityStatus.SUCCES;
             }
 
-            activity.ActvityStatusID = ActivityStatus.ActivityID.OTHER;
+            return ActivityStatus.OTHER;
+
+        }
+
+        public async Task<Activity> Reserve(LicenseEntity license, WorkerEntity worker)
+        {
+
+            Activity activity = new Activity();
+
+            activity.ActivityName = "License Reserve";
+            activity.WorkerID = worker.Id;
+            activity.ActvityStatus = this.ValidateReservation(license);
+            return activity;
+
+        }
+
+        public async Task<Activity> ReleaseLicense(LicenseEntity license, WorkerEntity worker)
+        {
+            Activity activity = new Activity();
+
+            activity.ActivityName = "License Release";
+            activity.WorkerID = worker.Id;
+            activity.ActvityStatus = this.ValidateReleasation(license);
             return activity;
         }
 
-        public async Task<bool> CheckToRelease(License license) // When the user opens the app
-        {
-            if ((DateTime.Now - license.ActivationDate).TotalHours > 8)
-            {
-                await this.ReleaseLicense(license);
-            }
-
-            return false;
-        }
-
-        public async Task<bool> ReleaseAlert(License license)
-        {
-            double minutesLeft = (DateTime.Now - license.ActivationDate).TotalMinutes;
-            if ((minutesLeft <= 60 && minutesLeft > 0))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public async Task<bool> ExtendLicenseReservation(License license)
+        public async Task<bool> ExtendLicenseReservation(LicenseEntity license)
         {
             license.ActivationDate = DateTime.Now;
             return true;
         }
-
-    }
+}
 }
 
