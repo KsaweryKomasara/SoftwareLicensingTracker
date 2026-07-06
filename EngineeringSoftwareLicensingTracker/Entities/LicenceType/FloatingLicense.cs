@@ -2,9 +2,8 @@
 {
     public class FloatingLicense : LicenseEntity
     {
+        public ICollection<WorkerEntity> WorkerEntities { get; set; }
+        public String Port { get; set; }
 
-        public String ServerIP { get; set; }
-        public String IdleTime { get; set; }
-        public String Slots { get; set; }
     }
 }

@@ -10,9 +10,9 @@ namespace EngineeringSoftwareLicensingTracker.DataBase
         {
 
         }
-        public DbSet<LicenseEntity> LicenseEntity { get; set; }
-        public DbSet<ReservationEntity> Reservations {  get; set; }
-        public DbSet<WorkerEntity> WorkerEntity { get; set; }
-        public DbSet<Activity> Activity { get; set; }
+        public DbSet<LicenseEntity> Licenses { get; set; }
+        public DbSet<WorkplaceEntity> Workplaces {  get; set; }
+        public DbSet<WorkerEntity> Workers { get; set; }
+        public DbSet<Activity> Activities { get; set; }
     }
 }

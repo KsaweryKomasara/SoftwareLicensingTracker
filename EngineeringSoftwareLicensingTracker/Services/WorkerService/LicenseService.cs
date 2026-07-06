@@ -6,7 +6,7 @@ using System.ComponentModel;
 namespace EngineeringSoftwareLicensingTracker.Services.WorkerService
 {
 
-    public abstract class LicenseService
+    public class LicenseService
     {
         public AppDbContext AppDbContext { get; set; }
 
@@ -58,14 +58,17 @@ namespace EngineeringSoftwareLicensingTracker.Services.WorkerService
 
         }
 
-        public async Task<Activity> Reserve(LicenseEntity license, WorkerEntity worker)
+        public async Task<Activity> Reserve(int licenseId, int workerId)
         {
 
             Activity activity = new Activity();
+            var license = await AppDbContext.Licenses.FindAsync(licenseId);
+            var worker = await AppDbContext.Workers.FindAsync(workerId);
 
             activity.ActivityName = "License Reserve";
-            activity.WorkerID = worker.Id;
+            activity.WorkerEntityId = worker.WorkerEntityId;
             activity.ActvityStatus = this.ValidateReservation(license);
+            await AppDbContext.SaveChangesAsync();
             return activity;
 
         }
@@ -75,7 +78,7 @@ namespace EngineeringSoftwareLicensingTracker.Services.WorkerService
             Activity activity = new Activity();
 
             activity.ActivityName = "License Release";
-            activity.WorkerID = worker.Id;
+            activity.WorkerEntityId = worker.WorkerEntityId;
             activity.ActvityStatus = this.ValidateReleasation(license);
             return activity;
         }
