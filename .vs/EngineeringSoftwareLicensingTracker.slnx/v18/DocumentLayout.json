@@ -3,40 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|c:\\users\\admin\\desktop\\projekty\\engineeringsoftwarelicensetracker\\engineeringsoftwarelicensingtracker\\engineeringsoftwarelicensingtracker\\services\\workerservice\\licenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|solutionrelative:engineeringsoftwarelicensingtracker\\services\\workerservice\\licenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|c:\\users\\admin\\desktop\\projekty\\engineeringsoftwarelicensetracker\\engineeringsoftwarelicensingtracker\\engineeringsoftwarelicensingtracker\\services\\managerservice\\analyzerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|solutionrelative:engineeringsoftwarelicensingtracker\\services\\managerservice\\analyzerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|c:\\users\\admin\\desktop\\projekty\\engineeringsoftwarelicensetracker\\engineeringsoftwarelicensingtracker\\engineeringsoftwarelicensingtracker\\controllers\\licensecontorller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|solutionrelative:engineeringsoftwarelicensingtracker\\controllers\\licensecontorller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|c:\\users\\admin\\desktop\\projekty\\engineeringsoftwarelicensetracker\\engineeringsoftwarelicensingtracker\\engineeringsoftwarelicensingtracker\\entities\\workerentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|solutionrelative:engineeringsoftwarelicensingtracker\\entities\\workerentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|c:\\users\\admin\\desktop\\projekty\\engineeringsoftwarelicensetracker\\engineeringsoftwarelicensingtracker\\engineeringsoftwarelicensingtracker\\controllers\\analyzercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|solutionrelative:engineeringsoftwarelicensingtracker\\controllers\\analyzercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|c:\\users\\admin\\desktop\\projekty\\engineeringsoftwarelicensetracker\\engineeringsoftwarelicensingtracker\\engineeringsoftwarelicensingtracker\\entities\\licenseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|solutionrelative:engineeringsoftwarelicensingtracker\\entities\\licenseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|c:\\users\\admin\\desktop\\projekty\\engineeringsoftwarelicensetracker\\engineeringsoftwarelicensingtracker\\engineeringsoftwarelicensingtracker\\entities\\workplaceentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|solutionrelative:engineeringsoftwarelicensingtracker\\entities\\workplaceentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|c:\\users\\admin\\desktop\\projekty\\engineeringsoftwarelicensetracker\\engineeringsoftwarelicensingtracker\\engineeringsoftwarelicensingtracker\\entities\\activities\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|solutionrelative:engineeringsoftwarelicensingtracker\\entities\\activities\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|c:\\users\\admin\\desktop\\projekty\\engineeringsoftwarelicensetracker\\engineeringsoftwarelicensingtracker\\engineeringsoftwarelicensingtracker\\entities\\licencetype\\floatinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|solutionrelative:engineeringsoftwarelicensingtracker\\entities\\licencetype\\floatinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|c:\\users\\admin\\desktop\\projekty\\engineeringsoftwarelicensetracker\\engineeringsoftwarelicensingtracker\\engineeringsoftwarelicensingtracker\\entities\\licencetype\\namelicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|solutionrelative:engineeringsoftwarelicensingtracker\\entities\\licencetype\\namelicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|c:\\users\\admin\\desktop\\projekty\\engineeringsoftwarelicensetracker\\engineeringsoftwarelicensingtracker\\engineeringsoftwarelicensingtracker\\entities\\licencetype\\nodelockedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|solutionrelative:engineeringsoftwarelicensingtracker\\entities\\licencetype\\nodelockedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|c:\\users\\admin\\desktop\\projekty\\engineeringsoftwarelicensetracker\\engineeringsoftwarelicensingtracker\\engineeringsoftwarelicensingtracker\\entities\\activities\\activitystatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|solutionrelative:engineeringsoftwarelicensingtracker\\entities\\activities\\activitystatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|c:\\users\\admin\\desktop\\projekty\\engineeringsoftwarelicensetracker\\engineeringsoftwarelicensingtracker\\engineeringsoftwarelicensingtracker\\database\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FF03B48-2344-D42B-6EBB-F073336773E5}|EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker.csproj|solutionrelative:engineeringsoftwarelicensingtracker\\database\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,112 +35,68 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LicenseContorller.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Controllers\\LicenseContorller.cs",
-              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\Controllers\\LicenseContorller.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Controllers\\LicenseContorller.cs",
-              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\Controllers\\LicenseContorller.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "LicenseService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Services\\WorkerService\\LicenseService.cs",
+              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\Services\\WorkerService\\LicenseService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Services\\WorkerService\\LicenseService.cs",
+              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\Services\\WorkerService\\LicenseService.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwBAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-05T14:41:51.063Z",
+              "WhenOpened": "2026-07-06T16:25:28.305Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Activity.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\Activities\\Activity.cs",
-              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\Entities\\Activities\\Activity.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\Activities\\Activity.cs",
-              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\Entities\\Activities\\Activity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA2AAAAAAAAAA==",
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\DataBase\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\DataBase\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\DataBase\\AppDbContext.cs",
+              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\DataBase\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-05T14:30:34.707Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "NodeLockedLicense.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\LicenceType\\NodeLockedLicense.cs",
-              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\Entities\\LicenceType\\NodeLockedLicense.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\LicenceType\\NodeLockedLicense.cs",
-              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\Entities\\LicenceType\\NodeLockedLicense.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-05T13:41:10.272Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "NameLicense.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\LicenceType\\NameLicense.cs",
-              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\Entities\\LicenceType\\NameLicense.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\LicenceType\\NameLicense.cs",
-              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\Entities\\LicenceType\\NameLicense.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-05T13:39:18.124Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FloatingLicense.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\LicenceType\\FloatingLicense.cs",
-              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\Entities\\LicenceType\\FloatingLicense.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\LicenceType\\FloatingLicense.cs",
-              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\Entities\\LicenceType\\FloatingLicense.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-05T13:38:34.749Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WorkerEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\WorkerEntity.cs",
-              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\Entities\\WorkerEntity.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\WorkerEntity.cs",
-              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\Entities\\WorkerEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-05T13:34:16.121Z",
+              "WhenOpened": "2026-07-06T16:35:42.824Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "WorkplaceEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\WorkplaceEntity.cs",
-              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\Entities\\WorkplaceEntity.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\WorkplaceEntity.cs",
-              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\Entities\\WorkplaceEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABOAAAAAAAAAA==",
+              "Title": "AnalyzerController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Controllers\\AnalyzerController.cs",
+              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\Controllers\\AnalyzerController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Controllers\\AnalyzerController.cs*",
+              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\Controllers\\AnalyzerController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-05T13:33:32.331Z"
+              "WhenOpened": "2026-07-07T16:28:27.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AnalyzerService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Services\\ManagerService\\AnalyzerService.cs",
+              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\Services\\ManagerService\\AnalyzerService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Services\\ManagerService\\AnalyzerService.cs*",
+              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\Services\\ManagerService\\AnalyzerService.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-07T16:32:17.788Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LicenseEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\LicenseEntity.cs",
-              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\Entities\\LicenseEntity.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\LicenseEntity.cs",
-              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\Entities\\LicenseEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Title": "LicenseContorller.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Controllers\\LicenseContorller.cs",
+              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\Controllers\\LicenseContorller.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Controllers\\LicenseContorller.cs*",
+              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\Controllers\\LicenseContorller.cs*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-04T15:07:25.306Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ActivityStatus.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\Activities\\ActivityStatus.cs",
-              "RelativeDocumentMoniker": "EngineeringSoftwareLicensingTracker\\Entities\\Activities\\ActivityStatus.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\Projekty\\EngineeringSoftwareLicenseTracker\\EngineeringSoftwareLicensingTracker\\EngineeringSoftwareLicensingTracker\\Entities\\Activities\\ActivityStatus.cs",
-              "RelativeToolTip": "EngineeringSoftwareLicensingTracker\\Entities\\Activities\\ActivityStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-05T14:16:51.99Z"
+              "WhenOpened": "2026-07-05T14:41:51.063Z",
+              "EditorCaption": ""
             }
           ]
         }

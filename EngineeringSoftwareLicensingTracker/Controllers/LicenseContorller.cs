@@ -14,7 +14,7 @@ namespace EngineeringSoftwareLicensingTracker.Controllers
         private readonly AppDbContext appDbContext;
         private readonly LicenseService licenseService;
 
-        public LicenseController(AppDbContext appDbContext  )
+        public LicenseController(AppDbContext appDbContext)
         {
             this.appDbContext = appDbContext;
             this.licenseService = new LicenseService(this.appDbContext);
@@ -32,6 +32,20 @@ namespace EngineeringSoftwareLicensingTracker.Controllers
         {
             await licenseService.Reserve(licenseid, workerid);
             return Ok("Reservation complete");
+        }
+
+        [HttpPost("license/{licenseid}/worker/{workerid}/release")]
+        public async Task<IActionResult> Release(int licenseid, int workerid)
+        {
+            await licenseService.Release(licenseid, workerid);
+            return Ok("Releasation complete");
+        }
+
+        [HttpPost("license/{licesnseid}/worker/{workerid}/extednlicensereservation")]
+        public async Task<IActionResult> ExtendLicenseReservation(int licenseid, int workerid)
+        {
+            await licenseService.ExtendLicenseReservation(licenseid, workerid);
+            return Ok("License extended");
         }
     }
 }

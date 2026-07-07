@@ -4,23 +4,24 @@ using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 namespace EngineeringSoftwareLicensingTracker.Services.ManagerService
 {
-    public class Analyzer
+    public class AnalyzerService
     {
         AppDbContext AppDbContext { get; set; }
-        public Analyzer(AppDbContext dbContext)
+        public AnalyzerService(AppDbContext dbContext)
         {
             this.AppDbContext = dbContext;
         }
 
         public async Task<decimal> GetFinancialReport()
         {
-            return await AppDbContext.LicenseEntity.SumAsync(x => x.Price);
+            decimal sum = await AppDbContext.Licenses.SumAsync(x => x.Price);
+            return sum;
         }
 
         public async Task<List<Entities.LicenseEntity>> GetLicensesNotUsed()
         {
             DateTime border = DateTime.Now.AddDays(-30);
-            return await AppDbContext.LicenseEntity.Where(x => x.LastUsedDate < border).ToListAsync();
+            return await AppDbContext.Licenses.Where(x => x.LastUsedDate < border).ToListAsync();
         }
     }
 }

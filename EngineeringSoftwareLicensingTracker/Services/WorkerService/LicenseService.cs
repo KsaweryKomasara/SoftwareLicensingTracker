@@ -64,7 +64,6 @@ namespace EngineeringSoftwareLicensingTracker.Services.WorkerService
             Activity activity = new Activity();
             var license = await AppDbContext.Licenses.FindAsync(licenseId);
             var worker = await AppDbContext.Workers.FindAsync(workerId);
-
             activity.ActivityName = "License Reserve";
             activity.WorkerEntityId = worker.WorkerEntityId;
             activity.ActvityStatus = this.ValidateReservation(license);
@@ -73,20 +72,28 @@ namespace EngineeringSoftwareLicensingTracker.Services.WorkerService
 
         }
 
-        public async Task<Activity> ReleaseLicense(LicenseEntity license, WorkerEntity worker)
+        public async Task<Activity> Release(int licenseId, int workerId)
         {
             Activity activity = new Activity();
-
+            var license = await AppDbContext.Licenses.FindAsync(licenseId);
+            var worker = await AppDbContext.Workers.FindAsync(workerId);
             activity.ActivityName = "License Release";
             activity.WorkerEntityId = worker.WorkerEntityId;
             activity.ActvityStatus = this.ValidateReleasation(license);
+            await AppDbContext.SaveChangesAsync();
             return activity;
         }
 
-        public async Task<bool> ExtendLicenseReservation(LicenseEntity license)
+        public async Task<Activity> ExtendLicenseReservation(int licenseId, int workerId)
         {
+            Activity activity = new Activity();
+            var license = await AppDbContext.Licenses.FindAsync(licenseId);
+            var worker = await AppDbContext.Workers.FindAsync(workerId);
+            activity.ActivityName = "License extension";
+            activity.WorkerEntityId = worker.WorkerEntityId;
             license.ActivationDate = DateTime.Now;
-            return true;
+            await AppDbContext.SaveChangesAsync();
+            return activity;
         }
 }
 }

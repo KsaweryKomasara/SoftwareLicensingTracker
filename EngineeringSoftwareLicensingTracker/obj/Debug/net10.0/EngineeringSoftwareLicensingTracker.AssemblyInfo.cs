@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EngineeringSoftwareLicensingTracker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1390a0d3b554ece7bd4bc75d3df1b3a074870b98")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0243d76086731a39ad6014827980d0915324f13d")]
 [assembly: System.Reflection.AssemblyProductAttribute("EngineeringSoftwareLicensingTracker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EngineeringSoftwareLicensingTracker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
