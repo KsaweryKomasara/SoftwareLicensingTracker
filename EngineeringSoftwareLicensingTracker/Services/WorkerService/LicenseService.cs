@@ -1,22 +1,29 @@
 ﻿using EngineeringSoftwareLicensingTracker.DataBase;
 using EngineeringSoftwareLicensingTracker.Entities;
 using EngineeringSoftwareLicensingTracker.Entities.Activities;
-using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel;
+using EngineeringSoftwareLicensingTracker.Services.ManagerService;
+using EngineeringSoftwareLicensingTracker.Common.Exception;
+using EngineeringSoftwareLicensingTracker.Common.Result.Result;
 namespace EngineeringSoftwareLicensingTracker.Services.WorkerService
 {
 
     public class LicenseService
     {
         public AppDbContext AppDbContext { get; set; }
+        private readonly ActivityService ActivityService;
 
         public LicenseService(AppDbContext AppDbContext) 
         { 
             this.AppDbContext = AppDbContext;
+            this.ActivityService = new ActivityService(this.AppDbContext);
         }
 
-        private ActivityStatus ValidateReservation(LicenseEntity license)
+        private Result ValidateReservation(LicenseEntity license)
         {
+            if (license == null)
+            {
+                throw new NotFoundResourceException();
+            }
             if (license.TotalSlots < 0)
             {
                 throw new ArgumentException("Incorret total slots number");
@@ -24,20 +31,24 @@ namespace EngineeringSoftwareLicensingTracker.Services.WorkerService
 
             if (license.TotalSlots - license.SlotsOccupied < 1)
             {
-                return ActivityStatus.NOAVAIBLESLOTS;
+                return Result.Failure(ResultCode.NOAVAILABLESLOTS);
             }
 
             if (license.TotalSlots - license.SlotsOccupied > 1)
             {
-                return ActivityStatus.SUCCES;
+                license.SlotsOccupied += 1;
+                return Result.Succes();
             }
 
-            return ActivityStatus.OTHER;
+            return Result.Failure(ResultCode.OTHER);
         }
 
-        private ActivityStatus ValidateReleasation(LicenseEntity license)
+        private Result ValidateReleasation(LicenseEntity license)
         {
-
+            if (license == null)
+            {
+                throw new NotFoundResourceException();
+            }
             if (license.TotalSlots < 0)
             {
                 throw new ArgumentException("Incorrect total slots number.");
@@ -45,56 +56,72 @@ namespace EngineeringSoftwareLicensingTracker.Services.WorkerService
 
             if (license.SlotsOccupied <= 0)
             {
-                return ActivityStatus.NOAVAIBLESLOTS;
+                return Result.Failure(ResultCode.NOAVAILABLESLOTS);
             }
 
             if (license.SlotsOccupied > 0)
             {
                 license.SlotsOccupied -= 1;
-                return ActivityStatus.SUCCES;
+                return Result.Succes();
             }
 
-            return ActivityStatus.OTHER;
+            return Result.Failure(ResultCode.OTHER);
 
         }
 
-        public async Task<Activity> Reserve(int licenseId, int workerId)
+        private Result ValidateExtension(LicenseEntity license)
         {
+            if (license == null)
+            {
+                throw new NotFoundResourceException();
+            }
+            if (license == null)
+            {
+                return Result.Failure(ResultCode.LICENSEEXPIRED);
+            }
 
-            Activity activity = new Activity();
+            return Result.Succes();
+        }
+
+        public async Task<Result> Reserve(int licenseId, int workerId)
+        {
             var license = await AppDbContext.Licenses.FindAsync(licenseId);
             var worker = await AppDbContext.Workers.FindAsync(workerId);
-            activity.ActivityName = "License Reserve";
-            activity.WorkerEntityId = worker.WorkerEntityId;
-            activity.ActvityStatus = this.ValidateReservation(license);
-            await AppDbContext.SaveChangesAsync();
-            return activity;
+            Result result = this.ValidateReservation(license);
+            Reservation reservation = new Reservation();
+            reservation.WorkerEntityId = workerId;
+            reservation.ReservationDate = DateTime.Now;
+            // license.Reservations.Add(reservation);
+            await this.ActivityService.createNewActivity(ActivityEntity.ActivityName.RSERVELICENSE, result, workerId);
+            return result;
 
         }
 
-        public async Task<Activity> Release(int licenseId, int workerId)
+        public async Task<Result> Release(int licenseId, int workerId)
         {
-            Activity activity = new Activity();
             var license = await AppDbContext.Licenses.FindAsync(licenseId);
             var worker = await AppDbContext.Workers.FindAsync(workerId);
-            activity.ActivityName = "License Release";
-            activity.WorkerEntityId = worker.WorkerEntityId;
-            activity.ActvityStatus = this.ValidateReleasation(license);
-            await AppDbContext.SaveChangesAsync();
-            return activity;
+            Result result = this.ValidateReleasation(license);
+            await this.ActivityService.createNewActivity(ActivityEntity.ActivityName.RELEASELICENSE, result, workerId);
+            return result;
+
         }
 
-        public async Task<Activity> ExtendLicenseReservation(int licenseId, int workerId)
+        public async Task<Result> ExtendLicenseReservation(int licenseId, int workerId)
         {
-            Activity activity = new Activity();
             var license = await AppDbContext.Licenses.FindAsync(licenseId);
             var worker = await AppDbContext.Workers.FindAsync(workerId);
-            activity.ActivityName = "License extension";
-            activity.WorkerEntityId = worker.WorkerEntityId;
-            license.ActivationDate = DateTime.Now;
-            await AppDbContext.SaveChangesAsync();
-            return activity;
+            Result result = this.ValidateExtension(license);
+            await this.ActivityService.createNewActivity(ActivityEntity.ActivityName.EXTENDLICENSE, result, workerId);
+            return result;
         }
-}
+
+        public async Task AddNewLicense(LicenseEntity licenseEntity)
+        {
+            this.AppDbContext.Licenses.Add(licenseEntity);
+            await this.AppDbContext.SaveChangesAsync();
+        }
+
+    }
 }
 

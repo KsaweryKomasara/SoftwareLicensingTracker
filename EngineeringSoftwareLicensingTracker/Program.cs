@@ -1,7 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using EngineeringSoftwareLicensingTracker.DataBase;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 // Add services to the container.
 
@@ -17,6 +20,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();

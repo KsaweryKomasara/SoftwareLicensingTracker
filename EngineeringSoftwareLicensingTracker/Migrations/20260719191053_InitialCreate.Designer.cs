@@ -3,6 +3,7 @@ using System;
 using EngineeringSoftwareLicensingTracker.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EngineeringSoftwareLicensingTracker.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260719191053_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,6 +52,31 @@ namespace EngineeringSoftwareLicensingTracker.Migrations
                     b.ToTable("Activities");
                 });
 
+            modelBuilder.Entity("EngineeringSoftwareLicensingTracker.Entities.LicenceType.NameLicense", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("DeviceLimit")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TotalSlots")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("UserCloudLogin")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int?>("WorkerEntityId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WorkerEntityId");
+
+                    b.ToTable("NameLicense");
+                });
+
             modelBuilder.Entity("EngineeringSoftwareLicensingTracker.Entities.LicenseEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -60,6 +88,9 @@ namespace EngineeringSoftwareLicensingTracker.Migrations
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<Guid>("FloatingLicenseId")
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("LastUsedDate")
                         .HasColumnType("timestamp without time zone");
@@ -86,7 +117,49 @@ namespace EngineeringSoftwareLicensingTracker.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FloatingLicenseId");
+
                     b.ToTable("Licenses");
+                });
+
+            modelBuilder.Entity("EngineeringSoftwareLicensingTracker.Entities.Programs.FloatingLicense", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Port")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FloatingLicense");
+                });
+
+            modelBuilder.Entity("EngineeringSoftwareLicensingTracker.Entities.Programs.NodeLockedLicense", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Localization")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("PrimaryUserID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TotalSlots")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("WorkplaceEntityId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WorkplaceEntityId");
+
+                    b.ToTable("NodeLockedLicense");
                 });
 
             modelBuilder.Entity("EngineeringSoftwareLicensingTracker.Entities.Reservation", b =>
@@ -164,6 +237,51 @@ namespace EngineeringSoftwareLicensingTracker.Migrations
                     b.Navigation("WorkerEntity");
                 });
 
+            modelBuilder.Entity("EngineeringSoftwareLicensingTracker.Entities.LicenceType.NameLicense", b =>
+                {
+                    b.HasOne("EngineeringSoftwareLicensingTracker.Entities.LicenseEntity", "License")
+                        .WithOne("NameLicense")
+                        .HasForeignKey("EngineeringSoftwareLicensingTracker.Entities.LicenceType.NameLicense", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EngineeringSoftwareLicensingTracker.Entities.WorkerEntity", "WorkerEntity")
+                        .WithMany()
+                        .HasForeignKey("WorkerEntityId");
+
+                    b.Navigation("License");
+
+                    b.Navigation("WorkerEntity");
+                });
+
+            modelBuilder.Entity("EngineeringSoftwareLicensingTracker.Entities.LicenseEntity", b =>
+                {
+                    b.HasOne("EngineeringSoftwareLicensingTracker.Entities.Programs.FloatingLicense", "FloatingLicense")
+                        .WithMany()
+                        .HasForeignKey("FloatingLicenseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FloatingLicense");
+                });
+
+            modelBuilder.Entity("EngineeringSoftwareLicensingTracker.Entities.Programs.NodeLockedLicense", b =>
+                {
+                    b.HasOne("EngineeringSoftwareLicensingTracker.Entities.LicenseEntity", "License")
+                        .WithOne("NodeLockedLicense")
+                        .HasForeignKey("EngineeringSoftwareLicensingTracker.Entities.Programs.NodeLockedLicense", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EngineeringSoftwareLicensingTracker.Entities.WorkplaceEntity", "WorkplaceEntity")
+                        .WithMany("NodeLockedLicenses")
+                        .HasForeignKey("WorkplaceEntityId");
+
+                    b.Navigation("License");
+
+                    b.Navigation("WorkplaceEntity");
+                });
+
             modelBuilder.Entity("EngineeringSoftwareLicensingTracker.Entities.Reservation", b =>
                 {
                     b.HasOne("EngineeringSoftwareLicensingTracker.Entities.LicenseEntity", null)
@@ -188,12 +306,23 @@ namespace EngineeringSoftwareLicensingTracker.Migrations
 
             modelBuilder.Entity("EngineeringSoftwareLicensingTracker.Entities.LicenseEntity", b =>
                 {
+                    b.Navigation("NameLicense")
+                        .IsRequired();
+
+                    b.Navigation("NodeLockedLicense")
+                        .IsRequired();
+
                     b.Navigation("Reservations");
                 });
 
             modelBuilder.Entity("EngineeringSoftwareLicensingTracker.Entities.WorkerEntity", b =>
                 {
                     b.Navigation("Reservations");
+                });
+
+            modelBuilder.Entity("EngineeringSoftwareLicensingTracker.Entities.WorkplaceEntity", b =>
+                {
+                    b.Navigation("NodeLockedLicenses");
                 });
 #pragma warning restore 612, 618
         }

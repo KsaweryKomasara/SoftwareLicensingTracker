@@ -23,7 +23,7 @@ namespace EngineeringSoftwareLicensingTracker.Controllers
         public async Task<IActionResult> GetFinancialResult()
         {
             decimal sum = await this.AnalyzerService.GetFinancialReport();
-            return Ok("Financial report");
+            return Ok("This is the financial report: " + sum);
         }
 
         [HttpGet("analyzer/getlicensesnotused")]

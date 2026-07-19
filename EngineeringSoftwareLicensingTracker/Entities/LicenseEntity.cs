@@ -2,9 +2,14 @@
 {
     public class LicenseEntity
     {
-        public int LicenseId { get; set; }
+        public Guid Id { get; set; }
         public String Name { get; set; }
-        public String PurchaseDate { get; set; }
+        public enum LicenseType
+        {
+            FLOATING, NAME, NODELOCKED 
+        }
+        public LicenseType Type { get; set; }
+        public DateTime PurchaseDate { get; set; }
         public decimal Price { get; set; }
         public DateTime ActivationDate { get; set; }
         public DateTime EndDate { get; set; }

@@ -2,7 +2,6 @@
 using EngineeringSoftwareLicensingTracker.Entities;
 using EngineeringSoftwareLicensingTracker.Services.WorkerService;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel;
 
 namespace EngineeringSoftwareLicensingTracker.Controllers
 {
@@ -20,32 +19,52 @@ namespace EngineeringSoftwareLicensingTracker.Controllers
             this.licenseService = new LicenseService(this.appDbContext);
         }
 
-        [HttpGet]
-        public IActionResult SomeString()
+        [HttpGet("getalllicenses")]
+        public IActionResult getLicenses()
         {
             List<LicenseEntity> licenseList = this.appDbContext.Licenses.ToList();
             return Ok(licenseList);
         }
 
-        [HttpPost("license/{licenseid}/worker/{workerid}/reserve")]
+        [HttpGet("{licenseId}/getlicense")]
+        public async Task<IActionResult> getLicense(int licenseId)
+        {
+            var license = await this.appDbContext.Licenses.FindAsync(licenseId);
+            if (license == null)
+            {
+                return NotFound("Not found the license");
+            }
+            return Ok(license);
+
+        }
+
+        [HttpPut("license/{licenseid}/worker/{workerid}/reserve")]
         public async Task<IActionResult> Reserve(int licenseid, int workerid)
         {
-            await licenseService.Reserve(licenseid, workerid);
+            await this.licenseService.Reserve(licenseid, workerid);
+            await this.appDbContext.SaveChangesAsync();
             return Ok("Reservation complete");
         }
 
-        [HttpPost("license/{licenseid}/worker/{workerid}/release")]
+        [HttpPut("license/{licenseid}/worker/{workerid}/release")]
         public async Task<IActionResult> Release(int licenseid, int workerid)
         {
-            await licenseService.Release(licenseid, workerid);
+            await this.licenseService.Release(licenseid, workerid);
             return Ok("Releasation complete");
         }
 
-        [HttpPost("license/{licesnseid}/worker/{workerid}/extednlicensereservation")]
+        [HttpPut("license/{licesnseid}/worker/{workerid}/extendlicensereservation")]
         public async Task<IActionResult> ExtendLicenseReservation(int licenseid, int workerid)
         {
-            await licenseService.ExtendLicenseReservation(licenseid, workerid);
+            await this.licenseService.ExtendLicenseReservation(licenseid, workerid);
             return Ok("License extended");
+        }
+
+        [HttpPost("license/create")]
+        public async Task<IActionResult> CreateLicense(LicenseEntity licenseEntity)
+        {
+            await this.licenseService.AddNewLicense(licenseEntity);
+            return Ok("License reserved");
         }
     }
 }

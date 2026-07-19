@@ -18,7 +18,7 @@ namespace EngineeringSoftwareLicensingTracker.Services.ManagerService
             return sum;
         }
 
-        public async Task<List<Entities.LicenseEntity>> GetLicensesNotUsed()
+        public async Task<List<LicenseEntity>> GetLicensesNotUsed()
         {
             DateTime border = DateTime.Now.AddDays(-30);
             return await AppDbContext.Licenses.Where(x => x.LastUsedDate < border).ToListAsync();
